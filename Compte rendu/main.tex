@@ -1,0 +1,133 @@
+% Document : compte rendu des DM
+% Auteur : Xavier Gandibleux
+% Année académique : 2018-2019
+
+\documentclass[a4paper,10pt]{article}
+
+
+% passe en mode large sur la page A4
+\usepackage{a4wide} 
+
+% document francisé
+\usepackage[francais]{babel} 
+
+% permet d'avoir de beaux tableaux
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+
+% permet la frappe de caracteres accentues (sur macOS)
+\usepackage[utf8x]{inputenc} 
+
+
+% individualisation des parametres de la page
+\parskip8pt
+\setlength{\topmargin}{-25mm}
+\setlength{\textheight}{250mm}
+
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+%
+
+%Je n'ai aucune idée de ce qu'ils font mais apparement ils sont important:
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% Sources de depart de l'adaptation de listing a julia :
+% 1) https://gist.github.com/chi-feng/6589066/4cda665ff0d93b8611a0e047a6a06d6a8ecd9b4e
+% 2) https://groups.google.com/forum/#!topic/julia-dev/HHjlYalHXY8
+
+\usepackage{inconsolata} % very nice fixed-width font included with texlive-full
+\usepackage[usenames,dvipsnames]{color} % more flexible names for syntax highlighting colors
+\usepackage{listings}
+
+\lstset{
+basicstyle=\ttfamily, 
+columns=fullflexible, % make sure to use fixed-width font, CM typewriter is NOT fixed width
+numbers=left, 
+numberstyle=\small\ttfamily\color{Gray},
+stepnumber=1,              
+numbersep=10pt, 
+numberfirstline=true, 
+numberblanklines=true, 
+tabsize=4,
+lineskip=-1.5pt,
+extendedchars=true,
+breaklines=true,        
+keywordstyle=\color{Blue}\bfseries,
+identifierstyle=, % using emph or index keywords
+commentstyle=\sffamily\color{OliveGreen},
+stringstyle=\color{Maroon},
+showstringspaces=false,
+showtabs=false,
+upquote=false,
+texcl=true % interpet comments as LaTeX
+}
+
+\lstdefinelanguage{julia}
+{
+  keywordsprefix=\@,
+  morekeywords={
+    exit,whos,edit,load,is,isa,isequal,typeof,tuple,ntuple,uid,hash,finalizer,convert,promote,
+    subtype,typemin,typemax,realmin,realmax,sizeof,eps,promote_type,method_exists,applicable,
+    invoke,dlopen,dlsym,system,error,throw,assert,new,Inf,Nan,pi,im,begin,while,for,in,return,
+    break,continue,macro,quote,let,if,elseif,else,try,catch,end,bitstype,ccall,do,using,module,
+    import,export,importall,baremodule,immutable,local,global,const,Bool,Int,Int8,Int16,Int32,
+    Int64,Uint,Uint8,Uint16,Uint32,Uint64,Float32,Float64,Complex64,Complex128,Any,Nothing,None,
+    function,type,typealias,abstract
+  },
+  sensitive=true,
+  morecomment=[l]{\#},
+%  morecomment=[s]{# =}{=#},
+  morestring=[b]',
+  morestring=[b]" 
+}
+%
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+%
+
+\begin{document}
+
+~
+\vspace{50mm}
+{\large
+\begin{center}
+  Université de Nantes --- UFR Sciences et Techniques\\
+  Master informatique parcours ``optimisation en recherche opérationnelle (ORO)''\\
+  Année académique 2019-2020
+  \vspace{30mm}
+ 
+  { \LARGE
+ 
+     Distanciel\\
+     \vspace{5mm}
+ 
+     {\huge \textbf{Métaheursitiques}}
+     \vspace{5mm}
+ 
+     Nilson \textsc{Toula} 
+     \vspace{50mm}
+  
+     \today
+  }  
+\end{center}
+}
+
+\vfill
+\break
+
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+\input{DM1/cr_dm1.tex} % decommenter lors de la remise du DM1 uniquement
+
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%\input{DM2/cr_dm2.tex}  % decommenter lors de la remise du DM2 uniquement
+
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%\input{DM3/cr_dm3.tex} % decommenter lors de la remise du DM3 uniquement
+
+
+
+\end{document}
+
